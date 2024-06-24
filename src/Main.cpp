@@ -6,9 +6,11 @@ int main()
 {
 	std::cout << "\n";
 	std::cout << "******************************\n";
-	std::cout << "VECTOR\n";
+	std::cout << "********MyCustomVector********\n";
 	std::cout << "******************************\n";
 	std::cout << "\n";
+
+	//Initialize vector - testVector1
 
 	MyVector<int> testVector1(40);
 	for (int i = 1; i <= 20; ++i) {
@@ -32,8 +34,9 @@ int main()
 	std::cout << "Lenght: " << testVector1.getLength() << "\n";
 	std::cout << "Capacity: " << testVector1.getCapacity() << "\n";
 	testVector1.printData();
+	
+	////Initialize vector - testVector2
 
-	/*
 	MyVector<int> testVector2(10);
 	for (int i = 21; i <= 30; ++i) {
 		testVector2.push_back(i);
@@ -54,7 +57,14 @@ int main()
 	std::cout << "******************************\n";
 
 	resultVector.push_back(99);	//should get here message that vector full
-	*/
 
+
+	std::cout << "******************************\n";
+	std::cout << "Testing Iterator:\n";
+
+	for (auto it = testVector1.begin(); it != testVector1.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
 }
 

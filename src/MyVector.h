@@ -133,4 +133,20 @@ public:
 		std::cout << "\n";
 	}
 
+	public:
+			class Iterator
+			{
+			private:
+				T* ptr;
+			public:
+				Iterator(T* p) : ptr(p) {}
+				Iterator& operator++() { ++ptr; return *this; }
+				Iterator operator++(int) { Iterator tmp = *this; ++ptr; return tmp; }
+				bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
+				bool operator==(const Iterator& other) const { return ptr == other.ptr; }
+				T& operator*() const { return *ptr; }
+			};
+
+			Iterator begin() { return Iterator(data); }
+			Iterator end() { return Iterator(data + length); }
 };
