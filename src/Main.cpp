@@ -11,8 +11,7 @@ int main()
 	std::cout << "\n";
 
 	//Initialize vector - testVector1
-
-	MyVector<int> testVector1(40);
+	VectorLib::MyVector<int> testVector1(40);
 	for (int i = 1; i <= 20; ++i) {
 		testVector1.push_back(i);
 	}
@@ -36,8 +35,7 @@ int main()
 	testVector1.printData();
 	
 	////Initialize vector - testVector2
-
-	MyVector<int> testVector2(10);
+	VectorLib::MyVector<int> testVector2(10);
 	for (int i = 21; i <= 30; ++i) {
 		testVector2.push_back(i);
 	}
@@ -48,7 +46,7 @@ int main()
 
 	std::cout << "******************************\n";
 
-	MyVector<int> resultVector = testVector1 + testVector2;
+	VectorLib::MyVector<int> resultVector = testVector1 + testVector2;
 
 	resultVector.printData();
 	std::cout << "Lenght: " << resultVector.getLength() << "\n";
@@ -58,7 +56,6 @@ int main()
 
 	resultVector.push_back(99);	//should get here message that vector full
 
-
 	std::cout << "******************************\n";
 	std::cout << "Testing Iterator:\n";
 
@@ -67,4 +64,3 @@ int main()
 		std::cout << *it << " ";
 	}
 }
-
